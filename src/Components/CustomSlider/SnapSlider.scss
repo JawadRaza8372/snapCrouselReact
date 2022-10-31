@@ -1,0 +1,111 @@
+.customCrouselCont {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	.crouselcont {
+		width: calc(100% - 130px);
+		height: 90%;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		position: relative;
+		.focuseddiv {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.slide {
+			width: 0px;
+			background-color: red;
+			border: 2px solid black;
+			overflow: hidden;
+			display: none;
+			position: relative;
+			border-radius: 30px;
+
+			&.active-anim {
+				height: 80%;
+				width: 45%;
+				max-width: 320px;
+				opacity: 0.4;
+				display: block;
+				&.focus {
+					height: 90%;
+					width: 55%;
+					max-width: 360px;
+					opacity: 1;
+				}
+				&.side {
+					margin: 0px 10%;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+	.btn-slide {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: #f1f1f1;
+		border: 1px solid rgba(34, 34, 34, 0.287);
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		&.prev {
+			top: 50%;
+			left: 20px;
+			transform: translateY(-60%);
+		}
+		&.next {
+			top: 50%;
+			right: 20px;
+			transform: translateY(-60%);
+		}
+	}
+}
+.slideoutAnimation {
+	animation: currentin2 0.36s linear forwards;
+}
+.slideoutAnimationsec {
+	animation: currentin3 0.36s linear forwards;
+}
+.slideInAnimation {
+	animation: currentin 0.36s linear forwards;
+}
+@keyframes currentin {
+	0% {
+		transform: translateX(-15px) scaleY(0.9);
+	}
+	100% {
+		transform: translateX(0px) scaleY(1);
+	}
+}
+@keyframes currentin2 {
+	0% {
+		transform: translateX(20px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
+@keyframes currentin3 {
+	0% {
+		transform: translateX(-20px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}
